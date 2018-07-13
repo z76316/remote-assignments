@@ -1,0 +1,208 @@
+/* ================================= 
+  Base Element Styles
+==================================== */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: sans-serif;
+	line-height: 1.6;
+}
+
+h2,
+h3,
+a {
+	color: #093a58;
+}
+
+h2,
+h3 {
+	margin-top: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+/* ================================= 
+  Base Layout Styles
+==================================== */
+
+/* ---- Navigation ---- */
+
+.menu-icon {
+	float: right;
+	text-align: center;
+	margin-top: 0.3em;
+	margin-right: 10px;
+}
+
+.menu-icon div {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px 0;
+}
+
+.main-nav {
+	display: none;
+	float: right;
+}
+
+.main-nav li {
+	display: inline-block;
+    margin-left: 15px;
+}
+
+.main-nav a {
+	text-align: center;
+ 	display: block;
+  	padding: 10px 15px;
+  	font-size: .95em;
+	color: #0099ff;
+	text-transform: uppercase;
+}
+
+.main-nav a:hover {
+	color: #093a58;
+}
+
+/* ---- Layout Containers ---- */
+
+.main-header {
+  	padding-top: .5em;
+  	padding-bottom: .5em;
+}
+
+.sec-title {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.banner,
+.main-footer {
+  	text-align: center;
+}
+
+.banner {
+  	color: #fff;
+  	background: #0099ff;
+  	padding: 3.2em 0;
+  	margin-bottom: 60px;
+}
+
+.col {
+  	padding-right: 1em;
+  	padding-left: 1em;
+}
+
+.main-footer {
+	background: #d9e4ea;
+	padding: 2em 0;
+	margin-top: 30px;
+}
+
+/* ---- Page Elements ---- */
+.title {
+	display: inline-block;
+	font-size: 1.5em;
+	margin: 0 auto;
+}
+
+
+.logo {
+	width: 1.5em;
+	margin-right: .4em;
+	margin-left: 10px;
+	margin-top: 2px;
+}
+
+.headline {
+  	margin-bottom: 0;
+}
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media (min-width: 500px) {
+
+  .container {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .col {
+    float: left;
+  }
+ 
+  .box-1,
+  .box-2,
+  .box-3,
+  .box-4 {
+    width: 45%;
+    margin: 2.5% 2.5%;
+  }
+
+  .main-nav {
+    float: right;
+  }
+
+  .main-nav li {
+    display: inline-block;
+    margin-left: 15px;
+  }
+
+  .tagline {
+    font-size: 1.4em;
+  }
+
+	/* ---- Float clearfix ---- */
+
+	.clearfix::after {
+		content: " ";
+		display: table;
+		clear: both;
+	}
+
+}
+
+@media (min-width: 800px) {
+
+  .menu-icon {
+  	display: none;
+  }
+
+  .main-nav {
+  	display: block;
+	  float: right;
+  }
+
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .col {
+    float: left;
+  }
+
+  .tagline {
+    font-size: 1.4em;
+  }
+
+
+@media (min-width: 1200px) {
+  
+    .container {
+      width: 80%;
+      max-width: 1200px;
+    }
+
+}
