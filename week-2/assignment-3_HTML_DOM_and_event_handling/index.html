@@ -8,23 +8,33 @@
 </head>
 <body>
 	
-	<header class="main-header">
-	<div class="container clearfix">
-		<img class="logo" src="img/if_Soccer_Ball_22984.png" alt="Soccer">
-		<p class="title">Beyond World Cup</p>
-		<div class="menu-icon">
-			<div></div>
-			<div></div>
-			<div></div>
-		</div>
-		
-		<ul class="main-nav">
+	<div class="mobile-float-menu">
+		<button class="x">x</button>
+		<ul>
 			<li><a href="#">Team</a></li>
 			<li><a href="#">Player</a></li>
 			<li><a href="#">Addictive</a></li>
 			<li><a href="#">About Me</a></li>
 		</ul>
 	</div>
+
+	<header class="main-header">
+		<div class="container clearfix">
+			<img class="logo" src="img/if_Soccer_Ball_22984.png" alt="Soccer">
+			<p class="title">Beyond World Cup</p>
+			<div class="menu-icon">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			
+			<ul class="main-nav">
+				<li><a href="#">Team</a></li>
+				<li><a href="#">Player</a></li>
+				<li><a href="#">Addictive</a></li>
+				<li><a href="#">About Me</a></li>
+			</ul>
+		</div>
 	</header> <!--/.main-header-->   
 
 	<div class="banner">
@@ -34,29 +44,60 @@
 	
   <div class="container clearfix">
   	<h1 class="sec-title">Something Charming</h1>
-    <div class="box-1 col">
+    <div class="box col">
       <h2>Upset</h2>
         <img src="img/upset-messi.jpg" alt="Upset">
-      <p>Underdog always hold huge hope.</p>
+      <p>Underdogs always hold huge hope.</p>
     </div> <!--/.box-1-->
     
-    <div class="box-2 col">
+    <div class="box col">
       <h2>Acting</h2>
         <img src="img/neymar-oscar.jpg" alt="Acting">
       <p>And the Oscar Goes to... Neymar！</p>
     </div> <!--/.box-2-->
     
-    <div class="box-3 col">
+    <div class="box col">
       <h2>Gamble</h2>
         <img src="img/gamble-soccer.jpg" alt="Gamble">
-      <p>I have a dream that one day the soccer lottery in my pocket becomes...</p>
+      <p>I have a dream that one day...</p>
     </div> <!--/.box-3-->
 
-    <div class="box-4 col">
+    <div class="box col">
       <h2>Fans</h2>
         <img src="img/fans.jpg" alt="Fans">
       <p>They are the most crazy animal in the planet.</p>
     </div> <!--/.box-4-->
+	
+	<div style="text-align:center;">
+		<button id="toggleBox">Show more</button>
+	</div>
+	<!-- showing up or hiding is control by button #toggleBox -->
+	<div class="hiding-first">
+		<div class="box col">
+	      <h2>Box 5</h2>
+	        <img src="img/upset-messi.jpg" alt="Upset">
+	      <p>Underdog always hold huge hope.</p>
+	    </div> <!--/.box-5-->
+	    
+	    <div class="box col">
+	      <h2>Box 6</h2>
+	        <img src="img/neymar-oscar.jpg" alt="Acting">
+	      <p>And the Oscar Goes to... Neymar！</p>
+	    </div> <!--/.box-6-->
+	    
+	    <div class="box col">
+	      <h2>Box 7</h2>
+	        <img src="img/gamble-soccer.jpg" alt="Gamble">
+	      <p>I have a dream that one day the soccer lottery in my pocket becomes...</p>
+	    </div> <!--/.box-7-->
+
+	    <div class="box col">
+	      <h2>Box 8</h2>
+	        <img src="img/fans.jpg" alt="Fans">
+	      <p>They are the most crazy animal in the planet.</p>
+	    </div> <!--/.box-8-->
+	</div>
+
   </div>
 
 	<footer class="main-footer">
@@ -65,6 +106,12 @@
 	
 	<!-- click to change the banner's content -->
 	<script src="click-to-change-text.js"></script>
+
+	<!-- click to show/hide float menu -->
+	<script src="click-to-show-menu.js"></script>
+
+	<!-- click to show/hide more content -->
+	<script src="click-to-show-more.js"></script>
 
 </body>
 </html>
