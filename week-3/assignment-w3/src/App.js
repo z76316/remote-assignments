@@ -2,20 +2,61 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './App.css';
 import soccerIcon from './img/if_Soccer_Ball_22984.png';
-import upsetMessi from './img/upset-messi.jpg';
-import neymarOscar from './img/neymar-oscar.jpg';
-import gambleSoccer from './img/gamble-soccer.jpg';
-import fans from './img/fans.jpg';
 
+var BOXES =[
+  {
+    title: "Upset",
+    image: "upset-messi",
+    content: "Underdogs always hold huge hope.",
+  },
+  {
+    title: "Acting",
+    image: "neymar-oscar",
+    content: "And the Oscar Goes to... Neymar！",
+  },
+  {
+    title: "Gamble",
+    image: "gamble-soccer",
+    content: "I have a dream that one day...",
+  },
+  {
+    title: "Fans",
+    image: "fans",
+    content: "They are the most crazy animal in the planet.",
+  },
+];
+
+var SHOW_MORE_BOXES =[
+  {
+    title: "BOX 5",
+    image: "upset-messi",
+    content: "Underdogs always hold huge hope.",
+  },
+  {
+    title: "BOX 6",
+    image: "neymar-oscar",
+    content: "And the Oscar Goes to... Neymar！",
+  },
+  {
+    title: "BOX 7",
+    image: "gamble-soccer",
+    content: "I have a dream that one day...",
+  },
+  {
+    title: "BOX 8",
+    image: "fans",
+    content: "They are the most crazy animal in the planet.",
+  },
+];
 
 function ContentBox(prop) {
-  let img = (prop.image);
-  console.log(img);
+  let imageName = prop.image;
+  imageName = require("./img/" + imageName + ".jpg");
 
   return (
     <div className="box col">
       <h2>{prop.title}</h2>
-        <img src={prop.image} alt={prop.title} />
+        <img src={imageName} alt={prop.title} />
       <p>{prop.content}</p>
     </div>
   );
@@ -33,6 +74,7 @@ class ShowMore extends Component {
     super(props);
     this.state = {
       isDisplay: false,
+      contents: this.props.contentBoxArray,
     };
   }
 
@@ -48,17 +90,22 @@ onStateChange = () => {
           <button id="toggleBox" onClick={this.onStateChange}>Show more</button>
         </div>
         <div className="hiding-first" style={{display: this.state.isDisplay ? 'block' : 'none'}}>
-          <ContentBox title="Box 5" image={require("./img/upset-messi.jpg")} content="Underdogs always hold huge hope." />
-          <ContentBox title="Box 6" image={require("./img/neymar-oscar.jpg")} content="And the Oscar Goes to... Neymar！" />
-          <ContentBox title="Box 7" image={require("./img/gamble-soccer.jpg")} content="I have a dream that one day..." />
-          <ContentBox title="Box 8" image={require("./img/fans.jpg")} content="They are the most crazy animal in the planet." />
+          {this.state.contents.map(function(box, index) {
+            return <ContentBox title={box.title} image={box.image} content={box.content} key={index}/>
+          })}
         </div>
       </div>
     );
   }
 }
 
-ShowMore.PropTypes
+ShowMore.propTypes = {
+  contentBoxArray: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired,
+  })).isRequired,
+};
 
 class App extends Component {
   constructor(props) {
@@ -67,6 +114,7 @@ class App extends Component {
       floatMenu: false,
       oWelcome: '',
       cWelcome: 'none',
+      contents: BOXES,
     };
   }
 
@@ -137,12 +185,11 @@ class App extends Component {
         
         <div className="container clearfix">
           <h1 className="sec-title">Something Charming</h1>
-          <ContentBox title="Upset" image={require("./img/upset-messi.jpg")} content="Underdogs always hold huge hope." />
-          <ContentBox title="Acting" image={require("./img/neymar-oscar.jpg")} content="And the Oscar Goes to... Neymar！" />
-          <ContentBox title="Gamble" image={require("./img/gamble-soccer.jpg")} content="I have a dream that one day..." />
-          <ContentBox title="Fans" image={require("./img/fans.jpg")} content="They are the most crazy animal in the planet." />
-          
-          <ShowMore />
+          {this.state.contents.map(function(box, index) {
+            return <ContentBox title={box.title} image={box.image} content={box.content} key={index}/>
+          })}
+
+          <ShowMore contentBoxArray={SHOW_MORE_BOXES}/>
         
         </div>
 
