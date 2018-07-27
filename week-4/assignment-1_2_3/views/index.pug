@@ -2,3 +2,7 @@ extends layout.pug
 
 block content
 	h2 Hello, My Server!
+	form(action='/getData', method='post')
+		label Enter your terminal of sum of the number series
+			input(type='text', name='number')
+		button(type='submit') Submit
