@@ -16,4 +16,4 @@ AppWorks School / 2018 Summer - Front-End Class
 ## Week 4: Get to know Node.js
 - Build an simple Node.js server that accpets get request
 - Response with the sum from 0 to the user input number
-- Practiced basic SSR
+- Implemented basic SSR with pug
